@@ -3,3 +3,7 @@ resources/_gen/
 node_modules/
 .hugo_build.lock
 .claude/
+
+# CV PDF kept out of git until the mobile number question is settled.
+# Remove this line once the final PDF is approved for publication.
+static/files/Althaber_CV.pdf
