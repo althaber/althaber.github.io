@@ -1,0 +1,11 @@
+{{- /* Profile links (icon + label). Used on the homepage and the contact page. */ -}}
+<ul class="profile-links">
+  {{- range site.Params.social }}
+  {{- if .url }}
+  <li><a href="{{ .url }}" {{ if not (hasPrefix .url "mailto:") }}rel="me noopener" target="_blank"{{ end }}>{{ partial "icon.html" .key }}<span>{{ .label }}</span></a></li>
+  {{- else if site.Params.show_placeholder_links }}
+  <!-- TODO: add the {{ .label }} URL in hugo.yaml (params.social) -->
+  <li><span class="placeholder-link" title="Link to follow">{{ partial "icon.html" .key }}<span>{{ .label }}</span></span></li>
+  {{- end }}
+  {{- end }}
+</ul>

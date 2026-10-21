@@ -7,7 +7,6 @@
   <a class="skip-link" href="#main">Skip to content</a>
   {{ partial "navbar.html" . }}
   <div class="page-wrap">
-    {{ partial "sidebar.html" . }}
     <main id="main" class="content" {{ if not .IsHome }}data-pagefind-body{{ end }}>
       {{ block "main" . }}{{ end }}
     </main>

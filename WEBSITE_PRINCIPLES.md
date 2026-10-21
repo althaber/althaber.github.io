@@ -4,9 +4,12 @@ Built following the GaryKing.org/mysite instructions, adapted:
 
 - **Hugo without a theme.** All layouts live in `layouts/`; there is no Hugo Blox
   dependency, no Go modules and no `_vendor/` folder. This keeps the build to a
-  single binary and makes every template easy to find. The design follows the
-  owner's chosen reference site (nkapelle.github.io): top bar with the name,
-  sticky profile sidebar with icon links, content on the right.
+  single binary and makes every template easy to find. Inspired by nkapelle.github.io
+  but deliberately different: top bar with the name; homepage with name and
+  "About me" on the left and a portrait (4:5, `static/images/profile-portrait.jpg`)
+  plus profile links on the right; subpages full width without a sidebar.
+  Profile links come from `params.social` via `layouts/partials/profile-links.html`
+  (also on the Contact page through the `profile-links` shortcode).
 - **Search:** Pagefind, built after Hugo (`npx pagefind --site public`), loaded only
   when the search modal opens (Ctrl/Cmd-K). Falls back to a Google `site:` search.
 - **Content model:** publications are page bundles in `content/publication/<slug>/index.md`;

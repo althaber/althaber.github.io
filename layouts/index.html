@@ -1,8 +1,18 @@
 {{ define "main" }}
-<article class="prose" data-pagefind-body>
-  <h1 class="page-title">About me</h1>
-  {{ .Content }}
-</article>
+<div class="home-intro">
+  <header class="home-head">
+    <h1 class="home-name">{{ site.Params.name }}</h1>
+    <p class="home-role">{{ site.Params.position }}<br>{{ site.Params.department }}, {{ site.Params.institution_long }}</p>
+  </header>
+  <aside class="home-aside" aria-label="Profile">
+    <img class="home-photo" src="{{ "images/profile-portrait.jpg" | relURL }}" width="280" height="350" alt="Portrait of {{ site.Params.short_name }}">
+    {{ partial "profile-links.html" . }}
+  </aside>
+  <article class="home-about prose" data-pagefind-body>
+    <h2 class="about-title">About me</h2>
+    {{ .Content }}
+  </article>
+</div>
 
 <section class="home-section" aria-labelledby="research-areas">
   <h2 id="research-areas">Research interests</h2>
