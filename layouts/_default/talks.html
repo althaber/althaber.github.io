@@ -1,0 +1,18 @@
+{{ define "main" }}
+<h1 class="page-title">{{ .Title }}</h1>
+{{ with .Content }}<div class="prose intro">{{ . }}</div>{{ end }}
+{{- $all := sort hugo.Data.talks.talks "date" "desc" }}
+{{- range slice (dict "type" "invited" "label" "Invited talks and expert contributions") (dict "type" "conference" "label" "Selected conference presentations") }}
+<section class="cv-section">
+  <h2>{{ .label }}</h2>
+  <ul class="talk-list">
+    {{- range where $all "type" .type }}
+    <li>
+      <span class="talk-date">{{ (time (printf "%s-01" .date)).Format "Jan 2006" }}</span>
+      <span class="talk-body"><span class="talk-event">{{ .event }}</span>{{ with .title }}<br><span class="talk-title">{{ . }}</span>{{ end }}</span>
+    </li>
+    {{- end }}
+  </ul>
+</section>
+{{- end }}
+{{ end }}

@@ -1,0 +1,27 @@
+{{ define "main" }}
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="{{ "" | relURL }}">Home</a> / <a href="{{ "publication/" | relURL }}">Publications</a>
+</nav>
+<article class="pub-single">
+  <h1 class="page-title">{{ .Title }}</h1>
+  <p class="pub-meta">
+    {{- range $i, $a := .Params.authors }}{{ if $i }}, {{ end }}{{ if in $a "Althaber" }}<strong>{{ $a }}</strong>{{ else }}{{ $a }}{{ end }}{{ end }}
+    &middot; {{ with .Params.status }}{{ . | title }}{{ else }}{{ .Date.Format "2006" }}{{ end }}
+  </p>
+  {{ with .Params.publication }}<p class="pub-venue">{{ . | markdownify }}</p>{{ end }}
+
+  {{ with .Params.links }}
+  <p class="pub-buttons">
+    {{- range . }}<a class="btn btn-outline" href="{{ .url | relURL }}">{{ .name }}</a>{{ end }}
+  </p>
+  {{ end }}
+
+  {{ with .Params.abstract }}
+  <h2 id="abstract">Abstract</h2>
+  <div class="prose">{{ . | markdownify }}</div>
+  {{ end }}
+  {{ with .Content }}<div class="prose">{{ . }}</div>{{ end }}
+
+  {{ partial "related.html" . }}
+</article>
+{{ end }}

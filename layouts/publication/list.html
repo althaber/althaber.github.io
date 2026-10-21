@@ -1,0 +1,183 @@
+{{ define "main" }}
+<h1 class="page-title">{{ .Title }}</h1>
+{{ with .Content }}<div class="prose intro">{{ . }}</div>{{ end }}
+
+{{- $pubs := sort .Pages "Date" "desc" }}
+{{- $tabs := slice
+  (dict "id" "all" "label" "All")
+  (dict "id" "articles" "label" "Articles")
+  (dict "id" "books" "label" "Books & Chapters")
+  (dict "id" "reports" "label" "Reports")
+  (dict "id" "in-progress" "label" "Work in Progress") }}
+{{- $years := slice }}
+{{- range $pubs }}{{ if not (isset .Params "status") }}{{ $years = $years | append (.Date.Format "2006") }}{{ end }}{{ end }}
+{{- $years = $years | uniq | sort }}
+{{- $years = collections.Reverse $years }}
+
+<nav class="pub-tabs" role="tablist" aria-label="Publication type">
+  {{- range $tabs }}
+  {{- $id := .id }}
+  {{- $n := 0 }}
+  {{- range $pubs }}{{ if or (eq $id "all") (eq (partial "tab-for.html" .) $id) }}{{ $n = add $n 1 }}{{ end }}{{ end }}
+  {{- if gt $n 0 }}
+  <button class="tab-btn" type="button" role="tab" data-tab="{{ .id }}" aria-selected="false">{{ .label }} <span class="tab-n">{{ $n }}</span></button>
+  {{- end }}
+  {{- end }}
+</nav>
+
+<div class="pub-layout">
+  <aside class="pub-filters" aria-label="Filters">
+    <label class="filter-label" for="pub-q">Search</label>
+    <input id="pub-q" type="search" placeholder="Title, author, venue…" autocomplete="off">
+
+    <label class="filter-label" for="pub-area">Research area</label>
+    <select id="pub-area">
+      <option value="">All areas</option>
+      {{- range hugo.Data.research_areas.areas }}
+      <option value="{{ .key }}">{{ .name }}</option>
+      {{- end }}
+    </select>
+
+    <span class="filter-label" id="year-label">Year</span>
+    <div class="year-box" role="group" aria-labelledby="year-label">
+      {{- range $years }}
+      <label class="check-row"><input type="checkbox" class="year-cb" value="{{ . }}"> <span>{{ . }}</span></label>
+      {{- end }}
+    </div>
+
+    <label class="filter-label" for="pub-sort">Sort</label>
+    <select id="pub-sort">
+      <option value="new">Newest first</option>
+      <option value="old">Oldest first</option>
+      <option value="az">Title A–Z</option>
+      <option value="za">Title Z–A</option>
+    </select>
+
+    <button type="button" class="btn btn-outline" id="pub-reset">Reset filters</button>
+  </aside>
+
+  <div class="pub-results">
+    <div class="pub-toolbar">
+      <span class="result-count" aria-live="polite"></span>
+      <button type="button" class="btn btn-chip" id="pub-bib">Download BibTeX</button>
+    </div>
+    <ol class="pub-list">
+      {{- range (where $pubs "Params.status" "eq" nil) | append (where $pubs "Params.status" "ne" nil) }}
+      {{- $doi := "" }}
+      {{- range .Params.links }}{{ if in .url "doi.org/" }}{{ $doi = replaceRE "^https?://(dx\\.)?doi\\.org/" "" .url }}{{ end }}{{ end }}
+      <li class="pub-item"
+          data-tab="{{ partial "tab-for.html" . }}"
+          data-year="{{ if isset .Params "status" }}{{ else }}{{ .Date.Format "2006" }}{{ end }}"
+          data-date="{{ .Date.Format "2006-01-02" }}"
+          data-areas="{{ delimit (.Params.areas | default slice) " " }}"
+          data-title="{{ .Title }}"
+          data-authors="{{ delimit .Params.authors " and " }}"
+          data-venue="{{ .Params.publication | plainify }}"
+          data-type="{{ index (.Params.publication_types | default (slice "misc")) 0 }}"
+          data-doi="{{ $doi }}"
+          data-slug="{{ .File.ContentBaseName | default (path.Base .File.Dir) }}">
+        {{ partial "citation.html" . }}
+        {{- with .Params.links }}
+        <span class="cite-links">{{ range . }}<a href="{{ .url | relURL }}">{{ .name }}</a>{{ end }}</span>
+        {{- end }}
+      </li>
+      {{- end }}
+    </ol>
+    <p class="no-results" hidden>No publications match these filters.</p>
+  </div>
+</div>
+
+<script>
+(function () {
+  var items = Array.prototype.slice.call(document.querySelectorAll('.pub-item'));
+  var list = document.querySelector('.pub-list');
+  var tabs = document.querySelectorAll('.tab-btn');
+  var q = document.getElementById('pub-q');
+  var area = document.getElementById('pub-area');
+  var sortSel = document.getElementById('pub-sort');
+  var years = document.querySelectorAll('.year-cb');
+  var countEl = document.querySelector('.result-count');
+  var none = document.querySelector('.no-results');
+  var state = { tab: 'all' };
+
+  function readHash() {
+    var h = location.hash.replace(/^#/, '');
+    var parts = h.split('&');
+    state.tab = 'all';
+    parts.forEach(function (p) {
+      if (!p) return;
+      var kv = p.split('=');
+      if (kv.length === 1) state.tab = decodeURIComponent(kv[0]);
+      else if (kv[0] === 'area') area.value = decodeURIComponent(kv[1]);
+      else if (kv[0] === 'q') q.value = decodeURIComponent(kv[1]);
+    });
+    if (!document.querySelector('.tab-btn[data-tab="' + state.tab + '"]')) state.tab = 'all';
+  }
+  function writeHash() {
+    var parts = [state.tab];
+    if (area.value) parts.push('area=' + encodeURIComponent(area.value));
+    if (q.value) parts.push('q=' + encodeURIComponent(q.value));
+    history.replaceState(null, '', '#' + parts.join('&'));
+  }
+  function apply() {
+    var term = q.value.trim().toLowerCase();
+    var ys = Array.prototype.filter.call(years, function (c) { return c.checked; }).map(function (c) { return c.value; });
+    var visible = 0;
+    items.forEach(function (it) {
+      var d = it.dataset;
+      var ok = (state.tab === 'all' || d.tab === state.tab)
+        && (!area.value || (' ' + d.areas + ' ').indexOf(' ' + area.value + ' ') > -1)
+        && (!ys.length || ys.indexOf(d.year) > -1)
+        && (!term || (d.title + ' ' + d.authors + ' ' + d.venue).toLowerCase().indexOf(term) > -1);
+      it.hidden = !ok;
+      if (ok) visible++;
+    });
+    var s = sortSel.value;
+    items.slice().sort(function (a, b) {
+      if (s === 'az' || s === 'za') { var r = a.dataset.title.localeCompare(b.dataset.title); return s === 'az' ? r : -r; }
+      // Work in progress (no year) always comes after published work.
+      var wa = a.dataset.year ? 0 : 1, wb = b.dataset.year ? 0 : 1;
+      if (wa !== wb) return wa - wb;
+      var r2 = a.dataset.date.localeCompare(b.dataset.date); return s === 'old' ? r2 : -r2;
+    }).forEach(function (it) { list.appendChild(it); });
+    countEl.textContent = visible + ' of ' + items.length + ' publications';
+    none.hidden = visible > 0;
+    tabs.forEach(function (b) {
+      var on = b.dataset.tab === state.tab;
+      b.classList.toggle('active', on);
+      b.setAttribute('aria-selected', on ? 'true' : 'false');
+    });
+    writeHash();
+  }
+  tabs.forEach(function (b) { b.addEventListener('click', function () { state.tab = b.dataset.tab; apply(); }); });
+  [q, area, sortSel].forEach(function (el) { el.addEventListener('input', apply); el.addEventListener('change', apply); });
+  years.forEach(function (c) { c.addEventListener('change', apply); });
+  document.getElementById('pub-reset').addEventListener('click', function () {
+    q.value = ''; area.value = ''; sortSel.value = 'new';
+    years.forEach(function (c) { c.checked = false; });
+    state.tab = 'all'; apply();
+  });
+  window.addEventListener('hashchange', function () { readHash(); apply(); });
+
+  document.getElementById('pub-bib').addEventListener('click', function () {
+    var esc = function (s) { return (s || '').replace(/[{}]/g, ''); };
+    var out = items.filter(function (it) { return !it.hidden; }).map(function (it) {
+      var d = it.dataset;
+      var kind = d.type === 'journal_article' ? 'article' : d.type === 'book' ? 'book' : d.type === 'book_chapter' ? 'incollection' : d.type === 'report' ? 'techreport' : 'unpublished';
+      var lines = ['@' + kind + '{' + d.slug + ',', '  title = {' + esc(d.title) + '},', '  author = {' + esc(d.authors) + '},'];
+      if (d.year) lines.push('  year = {' + d.year + '},');
+      if (d.venue) lines.push('  note = {' + esc(d.venue) + '},');
+      if (d.doi) lines.push('  doi = {' + d.doi + '},');
+      lines.push('}');
+      return lines.join('\n');
+    }).join('\n\n');
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob([out], { type: 'application/x-bibtex' }));
+    a.download = 'althaber-publications.bib';
+    document.body.appendChild(a); a.click(); a.remove();
+  });
+
+  readHash(); apply();
+})();
+</script>
+{{ end }}

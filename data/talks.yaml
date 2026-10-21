@@ -1,0 +1,105 @@
+# Talks and presentations. Newest first is not required - the site sorts them.
+# type: invited | conference
+# date: YYYY-MM
+talks:
+  - date: "2027-05"
+    type: invited
+    event: "Expert Workshop “Entwurf eines rechtlichen Regelungsrahmens für nichtformalisierte Lebensgemeinschaften”, Max Planck Institute for Comparative and International Private Law, Hamburg, Germany"
+    title: "Invited expert contribution on financial resource management in married and non-marital partnerships"
+  - date: "2026-11"
+    type: invited
+    event: "Research Colloquium, Chair of Sociology, Economy and Organization, Goethe University Frankfurt, Germany"
+    title: "Wealth Ownership and Gender Inequalities"
+  - date: "2026-06"
+    type: invited
+    event: "KonsortSWD Roundtable on Sociodemography 2026, GESIS, Mannheim, Germany"
+    title: "Invited expert contribution on the measurement of wealth in surveys"
+
+  - date: "2026-06"
+    type: conference
+    event: "Work and Family Researchers Network Conference, Montreal, Canada"
+    title: "Norms, Property Ownership, and Couples’ Money Management; Property Ownership and Couple’s Division of Housework"
+  - date: "2026-02"
+    type: conference
+    event: "FACES – International Conference on Family Science 2026, Munich, Germany"
+    title: "How Normative and Material Commitment Shape Couples’ Finances"
+  - date: "2025-10"
+    type: conference
+    event: "ISI Wealth Conference, Munich, Germany"
+    title: "Intergenerational Wealth Transfers and Gendered Transitions into Entrepreneurship"
+  - date: "2025-03"
+    type: conference
+    event: "ICWF – International Community, Work & Family Conference, Bielefeld, Germany"
+    title: "Family Wealth and Entrepreneurial Gender Gaps"
+  - date: "2024-09"
+    type: conference
+    event: "DGS Sektionenkonferenz, Universität Osnabrück, Germany"
+    title: "Panel and Workshop Discussion: “New Perspectives on Class and Property”"
+  - date: "2024-09"
+    type: conference
+    event: "ECSR Conference, UAB, Barcelona, Spain"
+    title: "Economic Inequalities and the Stalled Gender Revolution: A Comparative Analysis of Couples’ Relative Resources and Money Management"
+  - date: "2024-05"
+    type: conference
+    event: "Meeting of the Section on Family Sociology of the German Sociological Association, Bamberg, Germany"
+    title: "Bis dass der Tod uns scheidet? Die Geldverwaltung von Paaren in Ost- und Westdeutschland"
+  - date: "2023-09"
+    type: conference
+    event: "ECSR Conference, Czech Academy of Sciences, Prague, Czech Republic"
+    title: "Does financial integration make romantic partners happier?"
+  - date: "2023-08"
+    type: conference
+    event: "ISA RC28 Summer Meeting 2023, Stone Center for Inequality Dynamics, University of Michigan, Ann Arbor, USA"
+    title: "Can Couples' Money Management Mitigate Wealth and Income Inequalities between Partners? A Comparison of East and West Germany"
+  - date: "2023-03"
+    type: conference
+    event: "Spring Meeting of the Section on Social Stratification and Inequality of the German Sociological Association, Mannheim, Germany"
+    title: "Mein, dein oder unser Geld? Ressourcenungleichheiten und die Geldverwaltung von Paaren in Ost- und Westdeutschland"
+  - date: "2022-10"
+    type: conference
+    event: "41st Congress of the German Sociological Association, Bielefeld, Germany"
+    title: "More money, more power? How wealth and income inequalities in couple households influence partners' money management in East and West Germany"
+  - date: "2022-04"
+    type: conference
+    event: "ISA RC28 Spring Meeting 2022, London School of Economics, UK"
+    title: "Wealth and Money in Couple Households: How do gendered income and wealth inequalities influence couples’ money management?"
+  - date: "2021-06"
+    type: conference
+    event: "ISA RC28 Spring Meeting 2021, University of Turku, Finland (online event)"
+    title: "The part-time career penalty for men: Do occupational opportunity structures explain disadvantages of reduced working hours?"
+  - date: "2019-05"
+    type: conference
+    event: "Spring Meeting of the Section on Social Stratification and Inequality of the German Sociological Association, Berlin, Germany"
+    title: "Der Einfluss der beruflichen Geschlechtersegregation und beruflicher Arbeitszeitarrangements auf Teilzeitarbeit"
+  - date: "2018-10"
+    type: conference
+    event: "ECSR Conference, Paris, France"
+    title: "Institutionalized Gender Norms in Occupations and Men's Transitions to Part-Time Employment"
+  - date: "2017-06"
+    type: conference
+    event: "International Conference “Occupations and Social Inequality”, Nuremberg, Germany"
+    title: "Occupations as Determinants for Men’s Transitions from Full-time to Part-time Employment in Germany"
+  - date: "2014-09"
+    type: conference
+    event: "ECSR Conference, Berlin, Germany"
+    title: "Occupations as Determinants of Men’s and Women’s Participation in Part-Time Work in Germany"
+  - date: "2014-06"
+    type: conference
+    event: "Work and Family Researchers Network Conference, New York City, USA"
+    title: "Men’s Part-Time Work in Germany – Occupations as Determinants of Gender-Specific Working Times"
+  - date: "2014-04"
+    type: conference
+    event: "Meeting of the Section on Family Sociology of the German Sociological Association, Berlin, Germany"
+    title: "Die Berufe junger Frauen zählen. Der Einfluss beruflicher Schließung auf das Timing der Familiengründung"
+  - date: "2013-11"
+    type: conference
+    event: "2nd International Conference on Transitions in Youth and Young Adulthood, Basel, Switzerland"
+    title: "Occupational Closure and Women's Timing of Family Formation in Young Adulthood"
+  - date: "2012-07"
+    type: conference
+    event: "Marie Jahoda Summer School of Sociology, Vienna, Austria"
+    title: "Why do so Few Men Work Part-Time? Outline of the Dissertation Project on Part-Time Work and Occupational Segregation in Germany"
+  - date: "2012-06"
+    type: conference
+    event: "Work and Family Researchers Network Conference, New York City, USA"
+    title: "Why do so Few Men Work Part-Time? Empirical Findings on Part-Time Work and Occupational Segregation in Germany"

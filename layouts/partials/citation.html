@@ -1,0 +1,13 @@
+{{- /* One dense citation line for a publication page. Context: the page. */ -}}
+{{- $p := . -}}
+{{- $year := cond (isset $p.Params "status") $p.Params.status ($p.Date.Format "2006") -}}
+<span class="cite-authors">
+{{- range $i, $a := $p.Params.authors -}}
+  {{- if $i }}, {{ end -}}
+  {{- if in $a "Althaber" }}<strong>{{ $a }}</strong>{{ else }}{{ $a }}{{ end -}}
+{{- end -}}
+</span>
+<span class="cite-year">({{ $year }}).</span>
+<a class="cite-title" href="{{ $p.RelPermalink }}">{{ $p.Title }}</a>.
+{{- with $p.Params.publication }} <span class="cite-venue">{{ . | markdownify }}</span>{{ end -}}
+{{- /* trim */ -}}

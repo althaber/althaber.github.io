@@ -1,0 +1,122 @@
+# CV page content. Each section has entries with: when, what (bold), where, note.
+sections:
+  - title: "Academic positions"
+    entries:
+      - when: "04/2025 – present"
+        what: "Postdoctoral Researcher"
+        where: "Chair “Social Structures and Social Inequality”, Department of Sociology, LMU Munich, Germany"
+      - when: "04/2021 – 03/2025"
+        what: "Postdoctoral Researcher"
+        where: "Project “Property Inequality in the Private Sphere” at SFB/TRR 294 „Structural Change of Property” and Institute of Sociology, Friedrich Schiller University Jena, Germany"
+      - when: "2021 – 2022"
+        what: "Associated Research Fellow"
+        where: "Research Group “National Educational Panel Study (NEPS): Vocational Training and Lifelong Learning”, WZB Berlin Social Science Center, Germany"
+      - when: "2021 – 2022"
+        what: "Rowena-Morse-Mentoring Fellow"
+        where: "Thüringer Kompetenznetzwerk Gleichstellung, Germany"
+      - when: "04/2010 – 07/2021"
+        what: "Doctoral Researcher"
+        where: "Research Group “National Educational Panel Study (NEPS): Vocational Training and Lifelong Learning”, WZB Berlin Social Science Center, Germany"
+        note: "Parental leave for 2 children born in 2012 and 2019"
+      - when: "08 – 11/2015"
+        what: "Visiting Scholar"
+        where: "Faculty of Arts and Social Sciences and Women, Work and Leadership Research Group, University of Sydney, Australia"
+      - when: "08/2011 – 04/2012"
+        what: "Operational Manager of NEPS Stage 6: “Vocational training and transitions into the labor market”"
+        where: "Research Group “National Educational Panel Study (NEPS): Vocational Training and Lifelong Learning”, WZB Berlin Social Science Center, Germany"
+      - when: "11/2010 – 07/2011"
+        what: "Doctoral Researcher"
+        where: "Project “Documentation and Preparation of the German Life History Study” in the research unit “Skill Formation and Labour Markets”, WZB Berlin Social Science Center, Germany"
+      - when: "02/2009 – 03/2010"
+        what: "Student Research Assistant"
+        where: "Mixed-methods project “The Entwined Life Courses of Academic Couples” in the research unit “Skill Formation and Labour Markets”, WZB Berlin Social Science Center, Germany"
+
+  - title: "Education"
+    entries:
+      - when: "2010 – 2021"
+        what: "Dr. phil. in Sociology"
+        where: "Free University Berlin, Germany"
+        note: "Thesis: Part time work for men. Occupational gender segregation and occupational working time arrangements as determinants from a life course perspective. Predicate: magna cum laude"
+      - when: "2004 – 2010"
+        what: "M.A. equivalent in Sociology (Diplom)"
+        where: "University of Leipzig, Germany"
+        note: "Thesis: Children and academic careers. How are women's career opportunities in academia affected by the timing of the birth of the first child and childcare solutions? Final grade: 1.7"
+      - when: "2007 – 2008"
+        what: "Erasmus Student"
+        where: "University of East London, London, UK"
+
+  - title: "Funding and grants"
+    entries:
+      - { when: "2026", what: "LMU Mentoring and LMU Postdoc Support Fund (4,500 €)" }
+      - { when: "2023", what: "Friedrich Schiller University Jena: Impulse<sup>project</sup> for Early Career Researchers (9,996 €)" }
+      - { when: "2022", what: "Friedrich Schiller University Jena: Organising Academic Events (1,500 €)" }
+      - { when: "2021", what: "Leibniz Open Access Monograph Publishing Fund (5,000 €)" }
+      - { when: "2021", what: "WZB Publishing Grant (3,000 €)" }
+      - { when: "2020", what: "WZB Flexible Funding for Career Development: Completion funding for doctoral theses (21,150 €)" }
+      - { when: "2015", what: "WZB Sydney Merit Fellowship for a research visit at the University of Sydney’s Faculty of Arts and Social Sciences (13,790 €)" }
+      - { when: "2014", what: "DAAD Travel Grant (950 €)" }
+
+  - title: "Recent advanced methods training"
+    entries:
+      - when: "02/2025"
+        what: "Konstanz Methods Excellence Workshop: Survey Experiments, University of Konstanz"
+        note: "Intensive training (100 hours) in the design, implementation, and analysis of conjoint and vignette survey experiments"
+
+  - title: "Contribution to published large-scale data sets"
+    entries:
+      - when: "2011 – 2021"
+        what: "NEPS Network. National Educational Panel Study, Scientific Use File of Starting Cohort Adults"
+        where: "Leibniz Institute for Educational Trajectories (LIfBi), Bamberg"
+        note: "Releases 1.0.0, 3.0.1, 5.1.0, 6.0.1, 7.0.0, 8.0.0, 9.0.1, 10.0.1, 11.1.0, 12.1.0 – e.g. <a href=\"https://doi.org/10.5157/NEPS:SC6:12.1.0\">doi:10.5157/NEPS:SC6:12.1.0</a>"
+      - when: "2014 – 2021"
+        what: "NEPS Network. National Educational Panel Study, Scientific Use File of Starting Cohort Grade 9"
+        where: "Leibniz Institute for Educational Trajectories (LIfBi), Bamberg"
+        note: "Releases 4.0.0, 6.0.0, 12.0.0 – e.g. <a href=\"https://doi.org/10.5157/NEPS:SC4:12.0.0\">doi:10.5157/NEPS:SC4:12.0.0</a>"
+
+  - title: "Committees and functions"
+    entries:
+      - { when: "2024", what: "Member of the Committee for the DGS Dissertation Award" }
+      - { when: "2024", what: "Member of the Appointment Committee for the W3 Professorship in Sociology of Work and Employment, Friedrich Schiller University Jena" }
+      - { when: "2017 – 2019", what: "Deputy member of the Academic Council of the WZB Berlin Social Science Center" }
+      - { when: "2013 – 2015", what: "Deputy member of the Academic Council of the WZB Berlin Social Science Center" }
+      - { when: "2013 – 2014", what: "Member of commissions for the WZB Flexible Funding for Career Development" }
+      - { when: "2011 – 2012", what: "Member of the task force “Development of the WZB”, WZB Berlin Social Science Center" }
+      - { when: "2011 – 2012", what: "Representative of doctoral researchers at the WZB Berlin Social Science Center" }
+
+  - title: "Conference and workshop organization"
+    entries:
+      - when: "09/2026"
+        what: "43rd Congress of the German Sociological Association, Mainz, Germany"
+        note: "Ad hoc group „Vermögen, Verschuldung und Finanzpraktiken privater Haushalte im Kontext sozialer Ungleichheit” (together with Barbara Brandl, Frankfurt; Florian König, Bremen; Jenny Preunkert, Kassel)"
+      - when: "11/2024"
+        what: "SFB Workshop “Property and Gender Relations”, Jena, Germany"
+        note: "Together with Kathrin Leuze, Sylka Scholz, Robin Saalfeld"
+      - when: "09/2023"
+        what: "DGS Section Social Inequality and Social Stratification Workshop „Ungleichheiten in Ost- und Westdeutschland – Persistenz oder Wandel?“, Jena, Germany"
+        note: "Together with Kathrin Leuze, Johannes Giesecke, Sylka Scholz, Robin Saalfeld"
+      - when: "06/2023"
+        what: "ECSR Workshop “Wealth Inequalities, Gender, and Family Structures”, Birmingham, UK"
+        note: "Together with Ellie Suh, Birmingham; Nicole Kapelle, Berlin; Daria Tisch, Cologne"
+      - when: "09/2022"
+        what: "41st Congress of the German Sociological Association, Bielefeld, Germany"
+        note: "Ad hoc group „Polarizations by Wealth? Institutional determinants and consequences of wealth inequalities” (together with Nora Müller, Mannheim)"
+
+  - title: "Peer-to-peer mentoring and event organization"
+    entries:
+      - { when: "10/2025 – present", what: "LMU Writing Workshop (together with Anna Zamberlan)" }
+      - { when: "10/2023", what: "Career event “Challenging Conventions” for SFB Early Career Researchers, SFB/TRR 294" }
+      - { when: "2022", what: "Workshop at the Institute of Sociology, Friedrich Schiller University Jena: “Professionelle Kommunikation im Hochschulalltag” by Alexandra Busch" }
+      - { when: "2022", what: "Workshop at the Institute of Sociology, Friedrich Schiller University Jena: “Schreibprozesse, Schreibroutinen und Schreibgruppen für Promovierende und Postdocs” by Lena Eckert" }
+      - { when: "2021", what: "SFB Early Career Researchers Retreat, SFB/TRR 294" }
+      - { when: "2017 – 2020", what: "WZB Feedback group for doctoral theses" }
+      - { when: "2019", what: "WZB Writing group for doctoral researchers" }
+      - { when: "2019", what: "Workshop for doctoral researchers at the WZB: “Managing your time, your writing and yourself” by Matthias Mayer" }
+      - { when: "2017 – 2019", what: "Writing Weeks for the NEPS Research Group at the WZB" }
+      - { when: "2016", what: "Workshop for doctoral researchers at the WZB: “Writing Sweatshop” by Katja Günther & Ingrid Scherübl" }
+      - { when: "2013", what: "Workshop for the NEPS Research Group at the WZB: “Sequence Analysis with NEPS data” by Christian Brzinsky-Fay" }
+
+  - title: "Reviewing"
+    text: "Journal of Marriage and Family, European Sociological Review, European Societies, Journal of Family Research, Social Inclusion, Berliner Zeitschrift für Soziologie, Asian Women; Heinrich-Böll-Stiftung"
+
+  - title: "Memberships"
+    text: "German Sociological Association (DGS) · Section on Social Stratification and Inequality of the DGS · Section on Sociology of the Family of the DGS · Section on Women and Gender Studies of the DGS · RC28 Stratification and Mobility of the International Sociological Association · Social Policy Association (SPA) · Work and Family Researchers Network (WFRN)"

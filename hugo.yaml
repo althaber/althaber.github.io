@@ -1,0 +1,58 @@
+baseURL: "https://althaber.github.io/"
+title: "Agnieszka Althaber"
+locale: en-us
+enableRobotsTXT: true
+disableKinds: [taxonomy, term]
+
+outputs:
+  home: [HTML, RSS]
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+permalinks:
+  publication: /publication/:contentbasename/
+
+params:
+  name: "Dr. Agnieszka Althaber"
+  short_name: "Agnieszka Althaber"
+  role: "Sociologist"
+  position: "Postdoctoral Researcher"
+  institution: "LMU Munich"
+  institution_long: "Ludwig-Maximilians-Universität München"
+  department: "Department of Sociology"
+  location: "Munich, Germany"
+  email: "a.althaber@lmu.de"
+  photo: "images/profile.jpg"
+  description: "Sociologist at LMU Munich working on wealth, gender and social inequalities, couples' money management, and the life course."
+
+  # Profile links shown as icons in the sidebar.
+  # Paste the URL between the quotes. Empty links are hidden on the
+  # live site; while show_placeholder_links is true they appear greyed out.
+  show_placeholder_links: true
+  social:
+    - { key: email,         label: "Email",          url: "mailto:a.althaber@lmu.de" }
+    - { key: orcid,         label: "ORCID",          url: "" }
+    - { key: scholar,       label: "Google Scholar", url: "" }
+    - { key: researchgate,  label: "ResearchGate",   url: "" }
+    - { key: linkedin,      label: "LinkedIn",       url: "" }
+    - { key: bluesky,       label: "Bluesky",        url: "" }
+    - { key: lmu,           label: "LMU profile",    url: "" }
+
+  # Settings chosen in the information form.
+  mysite:
+    credit: true
+    discovery: true
+    design:
+      source: "reference site https://nkapelle.github.io/ (layout: top bar + sticky profile sidebar)"
+      palette: "LMU green accent on white, slate text"
+
+menu:
+  main:
+    - { name: "Publications", url: "/publication/", weight: 10 }
+    - { name: "Talks",        url: "/talks/",       weight: 20 }
+    - { name: "Teaching",     url: "/teaching/",    weight: 30 }
+    - { name: "CV",           url: "/cv/",          weight: 40 }
+    - { name: "Contact",      url: "/contact/",     weight: 50 }

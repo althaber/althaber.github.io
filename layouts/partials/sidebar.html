@@ -1,0 +1,26 @@
+<aside class="profile" aria-label="Profile">
+  <div class="profile-inner">
+    <a href="{{ "" | relURL }}" class="profile-photo-link" tabindex="-1">
+      <img class="profile-photo" src="{{ site.Params.photo | relURL }}" width="180" height="180" alt="Portrait of {{ site.Params.short_name }}">
+    </a>
+    <div class="profile-text">
+      <p class="profile-name">{{ site.Params.name }}</p>
+      <p class="profile-role">{{ site.Params.role }}</p>
+      <p class="profile-affil">{{ site.Params.position }}<br>{{ site.Params.department }}, {{ site.Params.institution }}</p>
+      <p class="profile-loc">
+        <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z" fill="currentColor"/></svg>
+        {{ site.Params.location }}
+      </p>
+    </div>
+    <ul class="profile-links">
+      {{- range site.Params.social }}
+      {{- if .url }}
+      <li><a href="{{ .url }}" {{ if not (hasPrefix .url "mailto:") }}rel="me noopener" target="_blank"{{ end }}>{{ partial "icon.html" .key }}<span>{{ .label }}</span></a></li>
+      {{- else if site.Params.show_placeholder_links }}
+      <!-- TODO: add the {{ .label }} URL in hugo.yaml (params.social) -->
+      <li><span class="placeholder-link" title="Link to follow">{{ partial "icon.html" .key }}<span>{{ .label }}</span></span></li>
+      {{- end }}
+      {{- end }}
+    </ul>
+  </div>
+</aside>

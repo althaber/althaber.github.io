@@ -1,0 +1,38 @@
+{{- /*
+  "See also": explicit `related:` slugs first, then other publications scored by
+  shared research areas (+2 each), shared co-authors other than the owner (+1 each)
+  and shared title words (+2 each). Up to 5 results.
+*/ -}}
+{{- $self := . -}}
+{{- $stop := slice "a" "an" "and" "the" "of" "for" "in" "on" "to" "with" "by" "at" "as" "is" "are" "or" "from" "into" "how" "what" "who" "why" "und" "der" "die" "das" "den" "dem" "des" "im" "zur" "zum" "von" "auf" "mit" "ein" "eine" "wird" "über" "uber" "als" -}}
+{{- $tokens := slice -}}
+{{- range split (lower (replaceRE "[^\\p{L}\\p{N} ]" " " .Title)) " " }}{{ if and (ge (len .) 4) (not (in $stop .)) }}{{ $tokens = $tokens | append . }}{{ end }}{{ end -}}
+{{- $myAreas := .Params.areas | default slice -}}
+{{- $myAuthors := slice -}}
+{{- range .Params.authors }}{{ if not (in . "Althaber") }}{{ $myAuthors = $myAuthors | append . }}{{ end }}{{ end -}}
+{{- $picked := slice -}}
+{{- range .Params.related }}{{ with site.GetPage (printf "/publication/%s" .) }}{{ $picked = $picked | append . }}{{ end }}{{ end -}}
+{{- $scored := slice -}}
+{{- range where site.RegularPages "Type" "publication" -}}
+  {{- if and (ne .RelPermalink $self.RelPermalink) (not (in $picked .)) -}}
+    {{- $s := 0 -}}
+    {{- range .Params.areas }}{{ if in $myAreas . }}{{ $s = add $s 2 }}{{ end }}{{ end -}}
+    {{- range .Params.authors }}{{ if in $myAuthors . }}{{ $s = add $s 1 }}{{ end }}{{ end -}}
+    {{- $t := lower .Title -}}
+    {{- range $tokens }}{{ if in $t . }}{{ $s = add $s 2 }}{{ end }}{{ end -}}
+    {{- if ge $s 4 }}{{ $scored = $scored | append (dict "page" . "score" $s "date" .Date) }}{{ end -}}
+  {{- end -}}
+{{- end -}}
+{{- $scored = sort (sort $scored "date" "desc") "score" "desc" -}}
+{{- $out := $picked -}}
+{{- range $scored }}{{ if lt (len $out) 5 }}{{ $out = $out | append .page }}{{ end }}{{ end -}}
+{{- with $out }}
+<section class="see-also" aria-labelledby="see-also">
+  <h2 id="see-also">See also</h2>
+  <ul class="cite-list">
+    {{- range . }}
+    <li><span class="kind">[{{ if isset .Params "status" }}Work in progress{{ else }}Paper{{ end }}]</span> {{ partial "citation.html" . }}</li>
+    {{- end }}
+  </ul>
+</section>
+{{- end }}

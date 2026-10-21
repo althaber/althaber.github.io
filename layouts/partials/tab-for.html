@@ -1,0 +1,9 @@
+{{- /* Maps a publication to its tab on the Publications page. */ -}}
+{{- $types := .Params.publication_types | default slice -}}
+{{- $tab := "other" -}}
+{{- if isset .Params "status" }}{{ $tab = "in-progress" -}}
+{{- else if in $types "journal_article" }}{{ $tab = "articles" -}}
+{{- else if or (in $types "book") (in $types "book_chapter") }}{{ $tab = "books" -}}
+{{- else if in $types "report" }}{{ $tab = "reports" -}}
+{{- end -}}
+{{- return $tab -}}

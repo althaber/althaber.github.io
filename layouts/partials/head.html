@@ -1,0 +1,26 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{{- $title := cond .IsHome site.Params.name (printf "%s · %s" .Title site.Params.name) }}
+<title>{{ $title }}</title>
+{{- $desc := .Params.summary | default .Description | default site.Params.description }}
+<meta name="description" content="{{ $desc | plainify }}">
+<link rel="canonical" href="{{ .Permalink }}">
+<meta property="og:title" content="{{ $title }}">
+<meta property="og:description" content="{{ $desc | plainify }}">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:type" content="{{ if .IsHome }}profile{{ else }}website{{ end }}">
+<meta property="og:image" content="{{ site.Params.photo | absURL }}">
+<link rel="icon" href="{{ "favicon.ico" | relURL }}" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ "favicon-32x32.png" | relURL }}">
+<link rel="apple-touch-icon" href="{{ "apple-touch-icon.png" | relURL }}">
+{{- $css := resources.Get "css/main.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+{{- if site.Params.mysite.discovery }}
+<meta name="generator" content="Created using GaryKing.org/mysite (https://gking.harvard.edu/mysite)">
+{{- if .IsHome }}
+<script type="application/ld+json">
+{{ dict "@context" "https://schema.org" "@type" "Person" "name" site.Params.short_name "jobTitle" site.Params.position "affiliation" (dict "@type" "Organization" "name" site.Params.institution_long) "url" site.BaseURL "email" site.Params.email "isBasedOn" "https://gking.harvard.edu/mysite" | jsonify | safeJS }}
+</script>
+{{- end }}
+{{- end }}
+{{- if eq .Type "publication" }}{{ if .IsPage }}{{ partial "scholar-meta.html" . }}{{ end }}{{ end }}

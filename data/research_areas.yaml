@@ -1,0 +1,15 @@
+# Research interests shown on the homepage.
+# "key" links publications to an area: add the key to a publication's `areas:` list.
+areas:
+  - key: wealth
+    name: Wealth and Social Inequalities
+  - key: gender
+    name: Gender Inequalities
+  - key: couples
+    name: Couples and Property
+  - key: lifecourse
+    name: Life Course Research
+  - key: labour
+    name: Labour Market Research and Occupations
+  - key: methods
+    name: Quantitative Research Methods

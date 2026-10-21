@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="{{ site.Language.Locale | default "en" }}">
+<head>
+  {{ partial "head.html" . }}
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  {{ partial "navbar.html" . }}
+  <div class="page-wrap">
+    {{ partial "sidebar.html" . }}
+    <main id="main" class="content" {{ if not .IsHome }}data-pagefind-body{{ end }}>
+      {{ block "main" . }}{{ end }}
+    </main>
+  </div>
+  {{ partial "footer.html" . }}
+  {{ partial "search.html" . }}
+</body>
+</html>

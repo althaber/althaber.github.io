@@ -1,0 +1,53 @@
+{{ define "main" }}
+<article class="prose" data-pagefind-body>
+  <h1 class="page-title">About me</h1>
+  {{ .Content }}
+</article>
+
+<section class="home-section" aria-labelledby="research-areas">
+  <h2 id="research-areas">Research interests</h2>
+  {{- $pubs := where site.RegularPages "Type" "publication" }}
+  <div class="areas">
+  {{- range hugo.Data.research_areas.areas }}
+    {{- $key := .key }}
+    {{- $items := slice }}
+    {{- $wip := slice }}
+    {{- range sort $pubs "Date" "desc" }}{{ if in (.Params.areas | default slice) $key }}{{ if isset .Params "status" }}{{ $wip = $wip | append . }}{{ else }}{{ $items = $items | append . }}{{ end }}{{ end }}{{ end }}
+    {{- $items = $items | append $wip }}
+    <details class="area">
+      <summary><span class="area-name">{{ .name }}</span><span class="area-count">{{ len $items }}</span></summary>
+      <div class="area-body">
+        {{ with .description }}<p class="area-desc">{{ . }}</p>{{ end }}
+        <ul class="cite-list compact">
+          {{- range first 4 $items }}
+          <li>{{ partial "citation.html" . }}</li>
+          {{- end }}
+        </ul>
+        {{- if $items }}
+        <a class="text-link" href="{{ "publication/" | relURL }}#area={{ $key }}">All publications on this topic &rarr;</a>
+        {{- end }}
+      </div>
+    </details>
+  {{- end }}
+  </div>
+</section>
+
+{{- $upcoming := slice }}
+{{- range hugo.Data.talks.talks }}
+  {{- if ge (time (printf "%s-28" .date)) now }}{{ $upcoming = $upcoming | append . }}{{ end }}
+{{- end }}
+{{- with $upcoming }}
+<section class="home-section" aria-labelledby="upcoming">
+  <h2 id="upcoming">Upcoming talks</h2>
+  <ul class="talk-list">
+    {{- range sort . "date" "asc" }}
+    <li>
+      <span class="talk-date">{{ (time (printf "%s-01" .date)).Format "Jan 2006" }}</span>
+      <span class="talk-body"><span class="talk-event">{{ .event }}</span>{{ with .title }}<br><span class="talk-title">{{ . }}</span>{{ end }}</span>
+    </li>
+    {{- end }}
+  </ul>
+  <a class="text-link" href="{{ "talks/" | relURL }}">All talks &rarr;</a>
+</section>
+{{- end }}
+{{ end }}
