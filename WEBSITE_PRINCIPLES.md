@@ -11,9 +11,9 @@ Built following the GaryKing.org/mysite instructions, adapted:
   when the search modal opens (Ctrl/Cmd-K). Falls back to a Google `site:` search.
 - **Content model:** publications are page bundles in `content/publication/<slug>/index.md`;
   the folder name is the permanent URL. Talks, CV and research areas are YAML in `data/`.
-- **Publications page:** server-rendered list (works without JS) enhanced by a small
-  vanilla-JS filter: tabs (hash-synced), search, research area, year, sort, BibTeX export.
-  Work in progress (`status:` set) always sorts after published work.
+- **Publications page:** deliberately plain (owner's choice, like the reference site):
+  one heading per type (journal articles, books and chapters, other, work in progress),
+  newest first, no filters or JS. Grouping comes from `layouts/partials/tab-for.html`.
 - **See also:** computed at build time in `layouts/partials/related.html`
   (explicit `related:` slugs, then shared areas / co-authors / title words).
 - **Metadata:** `citation_*` tags and JSON-LD on publication pages; Person JSON-LD

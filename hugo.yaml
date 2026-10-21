@@ -39,7 +39,7 @@ params:
     - { key: researchgate,  label: "ResearchGate",   url: "" }
     - { key: linkedin,      label: "LinkedIn",       url: "" }
     - { key: bluesky,       label: "Bluesky",        url: "" }
-    - { key: lmu,           label: "LMU profile",    url: "" }
+    - { key: lmu,           label: "LMU profile",    url: "https://www.soziologie.lmu.de/de/das-institut/personen/kontaktseite/agnieszka-althaber-6b3f7c80.html" }
 
   # Settings chosen in the information form.
   mysite:
