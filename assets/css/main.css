@@ -82,7 +82,7 @@ a:hover { color: var(--color-link-hover); text-decoration: underline; text-under
 /* Homepage intro: name + About me on the left, portrait and links on the right */
 .home-intro {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 250px;
+  grid-template-columns: minmax(0, 1fr) 200px;
   grid-template-areas: "head aside" "about aside";
   grid-template-rows: auto 1fr;
   gap: 0 56px;
@@ -94,7 +94,7 @@ a:hover { color: var(--color-link-hover); text-decoration: underline; text-under
 .home-about .about-title { margin-top: 1.4em; }
 .home-aside { grid-area: aside; }
 .home-photo { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 10px; box-shadow: 0 8px 22px -12px rgba(20, 40, 30, .45); }
-.home-aside .profile-links { margin-top: 18px; display: grid; grid-template-columns: 1fr 1fr; gap: 0 10px; }
+.home-aside .profile-links { margin-top: 16px; display: grid; grid-template-columns: 1fr; gap: 0; }
 .home-aside .profile-links a, .home-aside .placeholder-link { font-size: 13.5px; }
 .content .profile-links { margin: 6px 0 0; }
 .content { min-width: 0; }
@@ -183,7 +183,7 @@ a:hover { color: var(--color-link-hover); text-decoration: underline; text-under
 /* ---------- Responsive ---------- */
 @media (max-width: 760px) {
   .home-intro { grid-template-columns: 1fr; grid-template-areas: "head" "aside" "about"; gap: 0; }
-  .home-aside { display: grid; grid-template-columns: 150px 1fr; gap: 18px; align-items: start; margin: 18px 0 4px; }
+  .home-aside { display: grid; grid-template-columns: 125px 1fr; gap: 18px; align-items: start; margin: 18px 0 4px; }
   .home-aside .profile-links { margin-top: 0; grid-template-columns: 1fr; }
 }
 @media (max-width: 760px) {
