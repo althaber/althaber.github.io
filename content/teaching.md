@@ -10,7 +10,7 @@ description: "Courses taught and theses supervised by Agnieszka Althaber."
 <ul class="course-list">
 <li><span class="course-title">Wealth Inequality, Social Origin and Changing Class Relations</span>, Seminar, MA Sociology, Winter 2025/2026 and Winter 2026/2027<span class="course-orig">Vermögensungleichheit, soziale Herkunft und Klassenverhältnisse im Wandel</span></li>
 <li><span class="course-title">Master's Thesis Colloquium</span>, MA Sociology, Winter 2025/2026 and Winter 2026/2027</li>
-<li><span class="course-title">Bites of Inequality – Research Colloquium</span>, organisation, ISI Munich, Summer 2026 – open to MA students and other interested participants</li>
+<li><span class="course-title">Bites of Inequality – Research Colloquium</span>, Co-organiser, Munich International Stone Center for Inequality Research (ISI), Summer 2026<span class="course-orig">Open to MA students and all interested participants</span></li>
 <li><span class="course-title">Social Inequality and Social Policy</span>, Lecture, BA Sociology, Summer 2026<span class="course-orig">Soziale Ungleichheit und Sozialpolitik</span></li>
 <li><span class="course-title">Reading Course: Gender of Capital</span>, Seminar, MA Sociology, Winter 2025/2026<span class="course-orig">Lektürekurs Gender of Capital</span></li>
 <li><span class="course-title">Business Ownership and Social Inequality</span>, Seminar, MA Sociology, Summer 2025<span class="course-orig">Unternehmensbesitz und soziale Ungleichheit</span></li>
