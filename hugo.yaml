@@ -20,13 +20,13 @@ params:
   short_name: "Agnieszka Althaber"
   role: "Sociologist"
   position: "Postdoctoral Researcher"
-  institution: "LMU Munich"
-  institution_long: "Ludwig-Maximilians-Universität München"
+  institution: "Ludwig-Maximilians-Universität Munich"
+  institution_long: "Ludwig-Maximilians-Universität Munich"
   department: "Department of Sociology"
   location: "Munich, Germany"
   email: "a.althaber@lmu.de"
   photo: "images/profile.jpg"
-  description: "Sociologist at LMU Munich working on wealth, gender and social inequalities, couples' money management, and the life course."
+  description: "Sociologist at Ludwig-Maximilians-Universität Munich working on wealth, gender and social inequalities, couples' money management, and the life course."
 
   # Profile links shown as icons in the sidebar.
   # Paste the URL between the quotes. Empty links are hidden on the

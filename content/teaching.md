@@ -5,7 +5,7 @@ description: "Courses taught and theses supervised by Agnieszka Althaber."
 
 ## Courses
 
-### LMU Munich
+### Ludwig-Maximilians-Universität Munich
 
 <ul class="course-list">
 <li><span class="course-title">Wealth Inequality, Social Origin and Changing Class Relations</span>, Seminar, MA Sociology, Winter 2025/2026 and Winter 2026/2027<span class="course-orig">Vermögensungleichheit, soziale Herkunft und Klassenverhältnisse im Wandel</span></li>
@@ -32,5 +32,5 @@ description: "Courses taught and theses supervised by Agnieszka Althaber."
 
 ## Supervision of MA and BA theses
 
-- **LMU Munich** (since 2025): 7 MA theses and 2 BA theses
+- **Ludwig-Maximilians-Universität Munich** (since 2025): 7 MA theses and 2 BA theses
 - **Friedrich Schiller University Jena** (2021–2025): 7 MA theses and 5 BA theses
