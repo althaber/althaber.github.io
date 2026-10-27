@@ -6,7 +6,7 @@
   <h1 class="page-title">{{ .Title }}</h1>
   <p class="pub-meta">
     {{- range $i, $a := .Params.authors }}{{ if $i }}, {{ end }}{{ if in $a "Althaber" }}<strong>{{ $a }}</strong>{{ else }}{{ $a }}{{ end }}{{ end }}
-    &middot; {{ with .Params.status }}{{ . | title }}{{ else }}{{ .Date.Format "2006" }}{{ end }}
+    &middot; {{ if .Params.forthcoming }}Forthcoming{{ else }}{{ with .Params.status }}{{ . | title }}{{ else }}{{ .Date.Format "2006" }}{{ end }}{{ end }}
   </p>
   {{ with .Params.publication }}<p class="pub-venue">{{ . | markdownify }}</p>{{ end }}
 

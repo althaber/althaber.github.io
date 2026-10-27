@@ -1,5 +1,5 @@
 {{- /* Google Scholar citation_* tags and schema.org JSON-LD for a publication page. */ -}}
-{{- if not (isset .Params "status") }}
+{{- if not (or (isset .Params "status") .Params.forthcoming) }}
 <meta name="citation_title" content="{{ .Title }}">
 {{- range .Params.authors }}
 <meta name="citation_author" content="{{ . }}">

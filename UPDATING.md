@@ -46,6 +46,10 @@ links:
 ---
 ```
 
+For an accepted, not yet published article add `forthcoming: true` – it is listed
+with the journal articles and shown as "(forthcoming)" instead of a year. Use today's
+date (never a future date – Hugo hides future-dated pages).
+
 For work in progress add `status: "under review"` (or `"in preparation"`) – it
 then appears under *Work in Progress* instead of a year.
 

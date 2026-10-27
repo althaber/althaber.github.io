@@ -1,6 +1,7 @@
 {{- /* One dense citation line for a publication page. Context: the page. */ -}}
 {{- $p := . -}}
-{{- $year := cond (isset $p.Params "status") $p.Params.status ($p.Date.Format "2006") -}}
+{{- $year := $p.Date.Format "2006" -}}
+{{- if $p.Params.forthcoming }}{{ $year = "forthcoming" }}{{ else if isset $p.Params "status" }}{{ $year = $p.Params.status }}{{ end -}}
 <span class="cite-authors">
 {{- range $i, $a := $p.Params.authors -}}
   {{- if $i }}, {{ end -}}

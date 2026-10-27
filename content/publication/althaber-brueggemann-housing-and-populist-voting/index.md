@@ -1,9 +1,11 @@
 ---
-title: "Housing and Populist Voting: Perceived Housing Affordability and Support for the AfD in Eastern Germany"
-date: 2026-10-02
+title: "When Housing Becomes Political: Objective Conditions, Subjective Perceptions, and Populist Radical-Right Voting"
+# Accepted manuscript: shown as "(forthcoming)". The date only orders it at the top of the list.
+date: 2026-10-27
+forthcoming: true
 authors: ["Althaber, A.", "Brüggemann, S."]
 publication_types: ["journal_article"]
-publication: "*Social Psychology*, Special Issue: Political Radicalization in the Context of Elections – An Omnibus Study in East Germany"
+publication: "*Social Psychology*. Special issue “Radicalizing Elections”, edited by T. Rothmund, E. Walther & O. Christ"
 areas: [wealth]
 ---
-<!-- TODO: now published - add volume/issue/pages, exact date and DOI link once available. -->
+<!-- TODO: once published, remove `forthcoming`, set the real date and add volume/issue/pages and the DOI link. -->
