@@ -5,7 +5,7 @@ description: "Courses taught and theses supervised by Agnieszka Althaber."
 
 ## Courses
 
-### Ludwig-Maximilians-Universität München
+### LMU Munich
 
 <ul class="course-list">
 <li><span class="course-title">Wealth Inequality, Social Origin and Changing Class Relations</span>, Seminar, MA Sociology, Winter 2025/2026 and Winter 2026/2027<span class="course-orig">Vermögensungleichheit, soziale Herkunft und Klassenverhältnisse im Wandel</span></li>
@@ -24,7 +24,7 @@ description: "Courses taught and theses supervised by Agnieszka Althaber."
 <li><span class="course-title">Gender Inequalities in the Labour Market</span>, Seminar, MA Sociology, Summer Term 2022<span class="course-orig">Geschlechterungleichheiten auf dem Arbeitsmarkt</span></li>
 </ul>
 
-### Free University Berlin
+### Freie Universität Berlin
 
 <ul class="course-list">
 <li><span class="course-title">Gender Inequalities in the Labour Market across European Societies</span>, Seminar, MA Sociology, Summer Term 2018<span class="course-orig">Geschlechterungleichheiten auf dem Arbeitsmarkt in Europa</span></li>

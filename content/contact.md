@@ -7,10 +7,10 @@ description: "How to contact Agnieszka Althaber."
 
 **Postal address**\
 Dr. Agnieszka Althaber\
-Ludwig-Maximilians-Universität München\
+LMU Munich\
 Department of Sociology\
 Konradstr. 6\
-80801 München, Germany
+80801 Munich, Germany
 
 **Profiles**
 
