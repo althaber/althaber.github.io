@@ -106,6 +106,10 @@ a:hover { color: var(--color-link-hover); text-decoration: underline; text-under
 .prose li { margin: .35em 0; }
 .prose li::marker { color: var(--color-accent); }
 .intro { color: var(--color-text-muted); }
+.course-list { list-style: none; padding: 0; margin: 0 0 1em; }
+.course-list li { padding: 8px 0; border-bottom: 1px solid var(--color-border); margin: 0; font-size: 15.5px; line-height: 1.5; }
+.course-title { font-weight: 600; }
+.course-orig { display: block; color: var(--color-text-muted); font-style: italic; font-size: 14.5px; }
 .placeholder-block { background: #fff8e1; border: 1px dashed #d9b84a; padding: 12px 14px; border-radius: var(--radius); color: #6b5a12; }
 .text-link { font-weight: 600; font-size: 15px; }
 
@@ -126,6 +130,9 @@ a:hover { color: var(--color-link-hover); text-decoration: underline; text-under
 .cite-list li { padding: 8px 0; border-bottom: 1px solid var(--color-border); font-size: 15px; line-height: 1.5; }
 .cite-list.compact li { padding: 6px 0; font-size: 14.5px; }
 .cite-title { font-weight: 600; }
+.cite-list.monographs { margin-bottom: 28px; }
+.cite-list.monographs li { background: var(--color-surface); border: 1px solid var(--color-border); border-left: 3px solid var(--color-accent); border-radius: 0 var(--radius) var(--radius) 0; padding: 12px 14px; }
+.cite-note { display: block; font-size: 12px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; color: var(--color-accent); margin-bottom: 2px; }
 .cite-venue { color: var(--color-text-muted); }
 .cite-links { display: inline-flex; flex-wrap: wrap; gap: 6px; margin-left: 6px; vertical-align: 1px; }
 .cite-links a { font-size: 12px; font-weight: 600; padding: 1px 8px; border: 1px solid var(--color-border); border-radius: 999px; background: var(--color-surface); color: var(--color-text-muted); }

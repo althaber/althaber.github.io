@@ -2,7 +2,7 @@
 <div class="home-intro">
   <header class="home-head">
     <h1 class="home-name">{{ site.Params.name }}</h1>
-    <p class="home-role">{{ site.Params.position }}<br>{{ site.Params.department }}, {{ site.Params.institution_long }}</p>
+    <p class="home-role">{{ site.Params.position }}<br>{{ site.Params.institution }}, {{ site.Params.department }}</p>
   </header>
   <aside class="home-aside" aria-label="Profile">
     <img class="home-photo" src="{{ "images/profile-portrait.jpg" | relURL }}" width="280" height="350" alt="Portrait of {{ site.Params.short_name }}">
@@ -14,37 +14,29 @@
   </article>
 </div>
 
-<section class="home-section" aria-labelledby="research-areas">
-  <h2 id="research-areas">Research interests</h2>
-  {{- $pubs := where site.RegularPages "Type" "publication" }}
-  <div class="areas">
-  {{- range hugo.Data.research_areas.areas }}
-    {{- $key := .key }}
-    {{- $items := slice }}
-    {{- $wip := slice }}
-    {{- range sort $pubs "Date" "desc" }}{{ if in (.Params.areas | default slice) $key }}{{ if isset .Params "status" }}{{ $wip = $wip | append . }}{{ else }}{{ $items = $items | append . }}{{ end }}{{ end }}{{ end }}
-    {{- $items = $items | append $wip }}
-    <details class="area">
-      <summary><span class="area-name">{{ .name }}</span><span class="area-count">{{ len $items }}</span></summary>
-      <div class="area-body">
-        {{ with .description }}<p class="area-desc">{{ . }}</p>{{ end }}
-        <ul class="cite-list compact">
-          {{- range first 4 $items }}
-          <li>{{ partial "citation.html" . }}</li>
-          {{- end }}
-        </ul>
-        {{- if $items }}
-        <a class="text-link" href="{{ "publication/" | relURL }}">All publications &rarr;</a>
-        {{- end }}
-      </div>
-    </details>
-  {{- end }}
-  </div>
+{{- $articles := slice }}
+{{- range where site.RegularPages "Type" "publication" }}{{ if eq (partial "tab-for.html" .) "articles" }}{{ $articles = $articles | append . }}{{ end }}{{ end }}
+{{- with $articles }}
+<section class="home-section" aria-labelledby="recent">
+  <h2 id="recent">Recent publications</h2>
+  <ul class="cite-list">
+    {{- range first 3 (sort . "Date" "desc") }}
+    <li>
+      {{ partial "citation.html" . }}
+      {{- with .Params.links }}
+      <span class="cite-links">{{ range . }}<a href="{{ .url | relURL }}">{{ .name }}</a>{{ end }}</span>
+      {{- end }}
+    </li>
+    {{- end }}
+  </ul>
+  <a class="text-link" href="{{ "publication/" | relURL }}">All publications &rarr;</a>
 </section>
+{{- end }}
 
 {{- $upcoming := slice }}
 {{- range hugo.Data.talks.talks }}
-  {{- if ge (time (printf "%s-28" .date)) now }}{{ $upcoming = $upcoming | append . }}{{ end }}
+  {{- $end := cond (eq (len .date) 7) (printf "%s-28" .date) .date }}
+  {{- if ge (time $end) now }}{{ $upcoming = $upcoming | append . }}{{ end }}
 {{- end }}
 {{- with $upcoming }}
 <section class="home-section" aria-labelledby="upcoming">
@@ -52,7 +44,7 @@
   <ul class="talk-list">
     {{- range sort . "date" "asc" }}
     <li>
-      <span class="talk-date">{{ (time (printf "%s-01" .date)).Format "Jan 2006" }}</span>
+      <span class="talk-date">{{ partial "talk-date.html" .date }}</span>
       <span class="talk-body"><span class="talk-event">{{ .event }}</span>{{ with .title }}<br><span class="talk-title">{{ . }}</span>{{ end }}</span>
     </li>
     {{- end }}

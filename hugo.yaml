@@ -36,7 +36,6 @@ params:
     - { key: email,         label: "Email",          url: "mailto:a.althaber@lmu.de" }
     - { key: orcid,         label: "ORCID",          url: "" }
     - { key: scholar,       label: "Google Scholar", url: "" }
-    - { key: researchgate,  label: "ResearchGate",   url: "" }
     - { key: linkedin,      label: "LinkedIn",       url: "" }
     - { key: bluesky,       label: "Bluesky",        url: "" }
     - { key: lmu,           label: "LMU profile",    url: "https://www.soziologie.lmu.de/de/das-institut/personen/kontaktseite/agnieszka-althaber-6b3f7c80.html" }

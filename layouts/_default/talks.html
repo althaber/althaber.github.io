@@ -8,7 +8,7 @@
   <ul class="talk-list">
     {{- range where $all "type" .type }}
     <li>
-      <span class="talk-date">{{ (time (printf "%s-01" .date)).Format "Jan 2006" }}</span>
+      <span class="talk-date">{{ partial "talk-date.html" .date }}</span>
       <span class="talk-body"><span class="talk-event">{{ .event }}</span>{{ with .title }}<br><span class="talk-title">{{ . }}</span>{{ end }}</span>
     </li>
     {{- end }}

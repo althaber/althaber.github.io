@@ -3,6 +3,7 @@ title: "Teilzeitarbeit im Lebensverlauf von Männern. Zur beruflichen Strukturie
 date: 2022-01-01
 authors: ["Althaber, A."]
 publication_types: ["book"]
+note: "Monograph · Dissertation"
 publication: "Opladen: Budrich Academic Press"
 areas: [labour, gender, lifecourse]
 links:

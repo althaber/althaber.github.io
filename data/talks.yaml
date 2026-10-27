@@ -1,12 +1,12 @@
 # Talks and presentations. Newest first is not required - the site sorts them.
 # type: invited | conference
-# date: YYYY-MM
+# date: YYYY-MM, or YYYY-MM-DD when the exact day is known
 talks:
   - date: "2027-05"
     type: invited
     event: "Expert Workshop “Entwurf eines rechtlichen Regelungsrahmens für nichtformalisierte Lebensgemeinschaften”, Max Planck Institute for Comparative and International Private Law, Hamburg, Germany"
     title: "Invited expert contribution on financial resource management in married and non-marital partnerships"
-  - date: "2026-11"
+  - date: "2026-12-07"
     type: invited
     event: "Research Colloquium, Chair of Sociology, Economy and Organization, Goethe University Frankfurt, Germany"
     title: "Wealth Ownership and Gender Inequalities"

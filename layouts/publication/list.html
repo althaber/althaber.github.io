@@ -16,9 +16,18 @@
   {{- with $items }}
 <section class="pub-group" aria-labelledby="pubs-{{ $id }}">
   <h2 id="pubs-{{ $id }}">{{ $label }}</h2>
-  <ul class="cite-list">
+  {{- /* Books group: monographs first and set apart, then chapters. */}}
+  {{- $lists := slice . }}
+  {{- if eq $id "books" }}
+    {{- $mono := where . "Params.publication_types" "intersect" (slice "book") }}
+    {{- $lists = slice $mono (complement $mono .) }}
+  {{- end }}
+  {{- range $i, $list := $lists }}
+  {{- with $list }}
+  <ul class="cite-list{{ if and (eq $id "books") (eq $i 0) }} monographs{{ end }}">
     {{- range . }}
     <li>
+      {{- with .Params.note }}<span class="cite-note">{{ . }}</span>{{ end }}
       {{ partial "citation.html" . }}
       {{- with .Params.links }}
       <span class="cite-links">{{ range . }}<a href="{{ .url | relURL }}">{{ .name }}</a>{{ end }}</span>
@@ -26,6 +35,8 @@
     </li>
     {{- end }}
   </ul>
+  {{- end }}
+  {{- end }}
 </section>
   {{- end }}
 {{- end }}
