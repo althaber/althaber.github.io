@@ -28,16 +28,17 @@ params:
   photo: "images/profile.jpg"
   description: "Sociologist at Ludwig-Maximilians-Universität Munich working on wealth, gender and social inequalities, couples' money management, and the life course."
 
-  # Profile links shown as icons in the sidebar.
+  # Profile links shown as icons on the homepage and the contact page.
   # Paste the URL between the quotes. Empty links are hidden on the
   # live site; while show_placeholder_links is true they appear greyed out.
   show_placeholder_links: true
   social:
     - { key: email,         label: "Email",          url: "mailto:a.althaber@lmu.de" }
-    - { key: orcid,         label: "ORCID",          url: "" }
-    - { key: scholar,       label: "Google Scholar", url: "" }
-    - { key: linkedin,      label: "LinkedIn",       url: "" }
-    - { key: bluesky,       label: "Bluesky",        url: "" }
+    - { key: orcid,         label: "ORCID",          url: "https://orcid.org/0000-0002-3707-9475" }
+    - { key: scholar,       label: "Google Scholar", url: "https://scholar.google.com/citations?user=pP33EJgAAAAJ" }
+    - { key: osf,           label: "OSF",            url: "https://osf.io/a9564/" }
+    - { key: linkedin,      label: "LinkedIn",       url: "https://www.linkedin.com/in/agnieszka-althaber-3063a2447" }
+    - { key: bluesky,       label: "Bluesky",        url: "https://bsky.app/profile/aalthaber.bsky.social" }
     - { key: lmu,           label: "LMU profile",    url: "https://www.soziologie.lmu.de/de/das-institut/personen/kontaktseite/agnieszka-althaber-6b3f7c80.html" }
 
   # Settings chosen in the information form.
