@@ -1,28 +1,8 @@
 {{ define "main" }}
 <h1 class="page-title">{{ .Title }}</h1>
-{{ with .Content }}<div class="prose intro">{{ . }}</div>{{ end }}
+{{ with .Content }}<div class="prose">{{ . }}</div>{{ end }}
 {{- with .Params.cv_pdf }}
 <p><a class="btn btn-outline" href="{{ . | relURL }}">Download CV (PDF)</a></p>
 {{- end }}
 <p class="cv-jump">See also: <a href="{{ "publication/" | relURL }}">Publications</a> · <a href="{{ "talks/" | relURL }}">Talks</a> · <a href="{{ "teaching/" | relURL }}">Teaching</a></p>
-{{- range hugo.Data.cv.sections }}
-<section class="cv-section">
-  <h2>{{ .title }}</h2>
-  {{- with .text }}<p>{{ . | safeHTML }}</p>{{ end }}
-  {{- with .entries }}
-  <dl class="cv-list">
-    {{- range . }}
-    <div class="cv-row">
-      <dt>{{ .when }}</dt>
-      <dd>
-        <span class="cv-what">{{ .what | safeHTML }}</span>
-        {{- with .where }}<br><span class="cv-where">{{ . | safeHTML }}</span>{{ end }}
-        {{- with .note }}<br><span class="cv-note">{{ . | safeHTML }}</span>{{ end }}
-      </dd>
-    </div>
-    {{- end }}
-  </dl>
-  {{- end }}
-</section>
-{{- end }}
 {{ end }}

@@ -1,16 +1,20 @@
 {{ define "main" }}
 <h1 class="page-title">{{ .Title }}</h1>
 {{ with .Content }}<div class="prose intro">{{ . }}</div>{{ end }}
+{{- /* Only talks from `since_year` (front matter) onwards are listed; older ones stay in data/talks.yaml. */}}
+{{- $since := printf "%d" (.Params.since_year | default 0) }}
 {{- $all := sort hugo.Data.talks.talks "date" "desc" }}
-{{- range slice (dict "type" "invited" "label" "Invited talks and expert contributions") (dict "type" "conference" "label" "Selected conference presentations") }}
+{{- range slice (dict "type" "invited" "label" "Invited talks and expert contributions") (dict "type" "conference" "label" "Conference presentations") }}
 <section class="cv-section">
   <h2>{{ .label }}</h2>
   <ul class="talk-list">
     {{- range where $all "type" .type }}
+    {{- if ge (substr .date 0 4) $since }}
     <li>
       <span class="talk-date">{{ partial "talk-date.html" .date }}</span>
       <span class="talk-body"><span class="talk-event">{{ .event }}</span>{{ with .title }}<br><span class="talk-title">{{ . }}</span>{{ end }}</span>
     </li>
+    {{- end }}
     {{- end }}
   </ul>
 </section>

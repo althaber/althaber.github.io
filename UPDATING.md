@@ -20,7 +20,7 @@ Run `preview.ps1` (right-click → "Run with PowerShell"), then open
 | "About me" text | `content/_index.md` |
 | Research interests | `data/research_areas.yaml` |
 | Talks | `data/talks.yaml` |
-| CV sections | `data/cv.yaml` |
+| CV (PDF download only) | `static/files/Althaber_CV.pdf` – replace the file, keep the name |
 | Teaching | `content/teaching.md` |
 | Contact | `content/contact.md` |
 | Photo | replace `static/images/profile.jpg` (square, about 720×720 px) |
