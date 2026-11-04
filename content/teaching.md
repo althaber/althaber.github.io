@@ -8,9 +8,8 @@ description: "Courses taught and theses supervised by Agnieszka Althaber."
 ### Ludwig-Maximilians-Universität Munich
 
 <ul class="course-list">
-<!-- TODO: add the programme (BA/MA Sociology) for the two Summer 2027 seminars once known. -->
-<li><span class="course-title">Wealth and Gender</span>, Seminar, Summer 2027 (in preparation)<span class="course-orig">Vermögen und Geschlecht</span></li>
-<li><span class="course-title">Public Policies: Alleviating or Reinforcing Disparities?</span>, Seminar, Summer 2027 (in preparation)</li>
+<li><span class="course-title">Wealth and Gender</span>, Seminar, MA Sociology, Summer 2027 (in preparation)<span class="course-orig">Vermögen und Geschlecht</span></li>
+<li><span class="course-title">Public Policies: Alleviating or Reinforcing Disparities?</span>, Seminar, MA Sociology, Summer 2027 (in preparation)</li>
 <li><span class="course-title">Wealth Inequality, Social Origin and Changing Class Relations</span>, Seminar, MA Sociology, Winter 2025/2026 and Winter 2026/2027<span class="course-orig">Vermögensungleichheit, soziale Herkunft und Klassenverhältnisse im Wandel</span></li>
 <li><span class="course-title">Master's Thesis Colloquium</span>, MA Sociology, Winter 2025/2026 and Winter 2026/2027</li>
 <li><span class="course-title">Comparative Stratification Research / Bites of Inequality</span>, Research Colloquium, Co-organiser, Summer 2026<span class="course-desc nowrap-wide">Hosted by the Munich International Stone Center for Inequality Research (ISI)</span></li>
