@@ -111,7 +111,7 @@ a:hover { color: var(--color-link-hover); text-decoration: underline; text-under
 .course-title { font-weight: 600; }
 .course-desc { display: block; color: var(--color-text-muted); font-size: 14.5px; margin-top: 2px; }
 @media (min-width: 761px) { .nowrap-wide { white-space: nowrap; } }
-.course-orig::before { content: "Original title: "; font-style: normal; }
+.course-orig::before { content: "Original title: "; }
 .course-list .placeholder-block { display: block; }
 .course-orig { display: block; color: var(--color-text-muted); font-style: italic; font-size: 14.5px; }
 .placeholder-block { background: #fff8e1; border: 1px dashed #d9b84a; padding: 12px 14px; border-radius: var(--radius); color: #6b5a12; }
