@@ -4,7 +4,7 @@
 {{- /* Only talks from `since_year` (front matter) onwards are listed; older ones stay in data/talks.yaml. */}}
 {{- $since := printf "%d" (.Params.since_year | default 0) }}
 {{- $all := sort hugo.Data.talks.talks "date" "desc" }}
-{{- range slice (dict "type" "invited" "label" "Invited talks and expert contributions") (dict "type" "conference" "label" "Conference presentations") }}
+{{- range slice (dict "type" "invited" "label" "Invited talks and expert contributions") (dict "type" "conference" "label" "Selected recent conference presentations") }}
 <section class="cv-section">
   <h2>{{ .label }}</h2>
   <ul class="talk-list">
