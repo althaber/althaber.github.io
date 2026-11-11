@@ -7,6 +7,6 @@ note: "Monograph"
 publication: "Opladen: Budrich Academic Press"
 areas: [labour, gender, lifecourse]
 links:
-  - name: "Open Access (PDF)"
-    url: "https://shop.budrich.de/wp-content/uploads/2021/12/9783966659529.pdf"
+  - name: "Open Access"
+    url: "https://shop.budrich.de/produkt/teilzeitarbeit-von-maennern/"
 ---
