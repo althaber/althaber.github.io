@@ -2,7 +2,10 @@
 <h1 class="page-title">{{ .Title }}</h1>
 {{ with .Content }}<div class="prose">{{ . }}</div>{{ end }}
 {{- with .Params.cv_pdf }}
-<p><a class="btn btn-outline" href="{{ . | relURL }}">Download CV (PDF)</a></p>
+<p class="cv-buttons">
+  <a class="btn btn-outline" href="{{ . | relURL }}" target="_blank" rel="noopener">View CV</a>
+  <a class="btn btn-outline" href="{{ . | relURL }}" download="Althaber_CV.pdf">Download CV (PDF)</a>
+</p>
 {{- end }}
 <p class="cv-jump">See also: <a href="{{ "publication/" | relURL }}">Publications</a> · <a href="{{ "talks/" | relURL }}">Talks</a> · <a href="{{ "teaching/" | relURL }}">Teaching</a></p>
 {{ end }}
