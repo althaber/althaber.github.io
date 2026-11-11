@@ -56,16 +56,14 @@ then appears under *Work in Progress* instead of a year.
 To host a PDF, put it in `static/files/` and link it as `url: "files/name.pdf"`
 (no leading slash).
 
-### Offer the CV as a download
+### Update the CV download
 
-Put the PDF in `static/files/` and uncomment the `cv_pdf:` line in `content/cv.md`.
-Check it for private details (private phone number, address) first – everything in
-this repository is public.
+Replace `static/files/Althaber_CV.pdf` with the new PDF (same file name). Check it
+for private details (private phone number, address) first – everything in this
+repository is public.
 
 ## Before the first publication
 
-- Fill in the "About me" text and the profile links.
-- Set `show_placeholder_links: false` in `hugo.yaml` (hides links without a URL).
 - On GitHub: *Settings → Pages → Build and deployment → Source: GitHub Actions*.
 
 ## If something goes wrong

@@ -5,7 +5,10 @@
 <meta name="citation_author" content="{{ . }}">
 {{- end }}
 <meta name="citation_publication_date" content="{{ .Date.Format "2006/01/02" }}">
-{{- with .Params.publication }}<meta name="citation_journal_title" content="{{ . | plainify }}">{{ end }}
+{{- /* Journal name only: markdown removed, volume/issue/pages (", 88(5), …") cut off. */ -}}
+{{- if in (.Params.publication_types | default slice) "journal_article" }}
+{{- with .Params.publication }}{{ if not (hasPrefix . "In ") }}<meta name="citation_journal_title" content="{{ . | markdownify | plainify | htmlUnescape | replaceRE `,\s*\d.*$` "" }}">{{ end }}{{ end }}
+{{- end }}
 {{- $doi := "" }}
 {{- range .Params.links }}
   {{- if in .url "doi.org/" }}{{ $doi = replaceRE "^https?://(dx\\.)?doi\\.org/" "" .url }}{{ end }}

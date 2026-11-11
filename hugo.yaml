@@ -31,7 +31,7 @@ params:
   # Profile links shown as icons on the homepage and the contact page.
   # Paste the URL between the quotes. Empty links are hidden on the
   # live site; while show_placeholder_links is true they appear greyed out.
-  show_placeholder_links: true
+  show_placeholder_links: false
   social:
     - { key: email,         label: "Email",          url: "mailto:a.althaber@lmu.de" }
     - { key: orcid,         label: "ORCID",          url: "https://orcid.org/0000-0002-3707-9475" }
