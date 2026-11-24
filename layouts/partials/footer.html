@@ -6,7 +6,7 @@
       <a href="{{ .URL | relURL }}">{{ .Name }}</a>
       {{- end }}
     </nav>
-    <p class="footer-copy">&copy; {{ now.Year }} {{ site.Params.short_name }}</p>
+    <p class="footer-copy">&copy; {{ now.Year }} {{ site.Params.short_name }} · <a href="{{ "legal/" | relURL }}">Legal notice / Impressum</a></p>
     {{- if site.Params.mysite.credit }}
     <p class="footer-credit">Created using <a href="https://garyking.org/mysite">GaryKing.org/mysite</a></p>
     {{- end }}
